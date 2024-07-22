@@ -1,0 +1,3 @@
+[submodule "CountRie"]
+	path = CountRie
+	url = https://github.com/RieBi/CountRie
