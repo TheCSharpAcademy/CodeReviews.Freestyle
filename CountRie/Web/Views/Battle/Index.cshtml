@@ -1,0 +1,90 @@
+﻿@using Data
+@using Web.ViewModels.Battles
+@model BattleListViewModel
+@{
+    ViewData["Title"] = "Battles";
+}
+
+<div class="row">
+    <button type="button" data-bs-toggle="modal" data-bs-target="#createModal" class="btn btn-primary">
+        <span class="material-symbols-outlined">contract_edit</span>
+        Create new battle
+    </button>
+</div>
+
+<div class="modal fade" id="createModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Create new battle?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" id="createForm">
+                <div class="modal-body fw-bold">
+                    <div class="mb-2">
+                        <label for="createName" class="form-label">Name</label>
+                        <input type="text" id="createName" name="battleName" minlength="1" maxlength="@DataConfig.NameLength" value="@Model.BattleName" class="form-control" autocomplete="off">
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="createCharacter1" class="form-label">First character</label> 
+                        <select id="createCharacter1" name="characterName1" class="form-select">
+                            @foreach (var name in Model.CharacterNames)
+                            {
+                                <option value="@name">@name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="createCharacter2" class="form-label">Second character</label>
+                        <select id="createCharacter2" name="characterName2" class="form-select">
+                            @foreach (var name in Model.CharacterNames)
+                            {
+                                <option value="@name">@name</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button asp-action="CreateNamedBattle" type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-1">
+    <div class="row">
+        @foreach (var battle in Model.Battles)
+        {
+            <div id="b-@battle.Id" class="col-6">    
+                <div class="p-3 my-3 rounded-3 bg-light fs-5-5">
+                    <h3>@battle.Name</h3>
+                    <div class="row pb-0">
+                        <div class="col-6">
+                            <p class="">@battle.Date.ToLongDateString()</p>
+                            <span class="text-success fst-italic">Winner</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <p><a asp-controller="Country" asp-action="Details" asp-route-id="@battle.Country.Name" class="text-reset">@battle.Country.Name</a></p>
+                            <span class="text-danger fst-italic">Loser</span>
+                        </div>
+                    </div>
+                    <p class="row">
+                        <span class="col-4">
+                            <a asp-controller="Character" asp-action="Details" asp-route-id="@battle.WinnerCharacter.Name" class="text-start text-success">@battle.WinnerCharacter.Name</a>
+                        </span>
+                        <span class="col-4 text-center">
+                            <span class="text-violet">VS</span>
+                        </span>
+                        <span class="col-4 text-end">
+                            <a asp-controller="Character" asp-action="Details" asp-route-id="@battle.LoserCharacter.Name" class="text-danger">@battle.LoserCharacter.Name</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
