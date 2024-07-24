@@ -1,0 +1,92 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.material-symbols-outlined {
+    vertical-align: -25%;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: darkviolet;
+    --bs-tooltip-opacity: 100;
+    --bs-tooltip-zindex: 10000;
+}
+
+.custom-badge {
+    background-color: darkviolet;
+    color: white;
+}
+
+.custom-badge-pink {
+    background-color: mediumvioletred;
+    color: white;
+}
+
+.text-violet {
+    color: darkviolet;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.anchor-link {
+    visibility: hidden;
+    text-decoration: none;
+    color: violet;
+}
+
+.anchor-base:hover .anchor-link {
+    visibility: visible;
+}
+
+.w-third {
+    width: 33.3%;
+}
+
+.ship {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.bug {
+    outline: 2px solid red;
+}
+
+.bbug {
+    border: 2px solid green;
+}
+
+.country-info {
+    overflow: hidden;
+}
+
+.fs-5-5 {
+    font-size: 1.1em;
+}
+
+.sizy {
+    width: 600px;
+}
+
+.long-text {
+    white-space: pre-line;
+}

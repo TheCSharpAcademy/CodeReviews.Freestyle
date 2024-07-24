@@ -1,0 +1,18 @@
+﻿@using Application.Queries.CharacterQueries
+@model IList<CharacterListDto>
+
+@{
+    ViewData["Title"] = "Characters";
+}
+
+<div class="row">
+    <a asp-action="Create" class="btn btn-primary">
+        <span class="material-symbols-outlined">contract_edit</span>
+        Create new character
+    </a>
+</div>
+
+@foreach (var c in Model)
+{
+    <partial name="_CharacterInfo" model="c" />
+}
