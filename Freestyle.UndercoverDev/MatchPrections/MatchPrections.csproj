@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WebScraper\WebScraper.csproj" />
     <ProjectReference Include="..\Utilities\Utilities.csproj" />
+    <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

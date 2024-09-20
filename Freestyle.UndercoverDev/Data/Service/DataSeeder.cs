@@ -6,7 +6,7 @@ using Utilities;
 namespace Data.Service;
 public class DataSeeder : IDataSeeder
 {
-    const string filePath = "";
+    const string filePath = "/home/nelson/Desktop/C#/AcadamyC#/Freestyle/Freestyle.UndercoverDev/Resources/predictions.xlsx";
     private readonly IMatchDataRepository _matchDataRepository;
 
     public DataSeeder(IMatchDataRepository matchDataRepository)
@@ -20,6 +20,21 @@ public class DataSeeder : IDataSeeder
 
         try
         {
+            // If filePath is not found
+            if (!File.Exists(filePath))
+            {
+                Logger.Log("[bold][red]Excel file not found at path: " + filePath + "[/][/]");
+                return;
+            }
+
+            
+            // If the Excel file is empty, return
+            if (new FileInfo(filePath).Length == 0)
+            {
+                Logger.Log("[bold][yellow]Excel file is empty.[/][/]");
+                return;
+            }
+
             // Read data from the downloaded Excel file and extract relevant information
             using var package = new ExcelPackage(new FileInfo(filePath));
 
@@ -40,6 +55,7 @@ public class DataSeeder : IDataSeeder
                     var matchData = new MatchData
                     {
                         Date = worksheet.Cells[row, 5].Value?.ToString(),
+                        League = worksheet.Cells[row, 4].Value?.ToString(),
                         HomeTeam = worksheet.Cells[row, 2].Value?.ToString(),
                         AwayTeam = worksheet.Cells[row, 3].Value?.ToString(),
                         HomeWin = float.TryParse(worksheet.Cells[row, 6].Value?.ToString(), out float homeWin) ? homeWin : 0,

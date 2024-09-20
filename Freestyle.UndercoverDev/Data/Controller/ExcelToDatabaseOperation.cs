@@ -23,23 +23,23 @@ public class ExcelToDatabaseOperation : IExcelToDatabaseOperation
 
     public async Task ConvertExcelToDatabase()
     {
-        Logger.Log("[lime] Reading Excel file...");
-        Logger.Log("[lime] Starting Excel to database conversion...");
-        Logger.Log("[lime] Converting Excel to database...");
+        Logger.Log("[lime] Reading Excel file...[/]");
+        Logger.Log("[lime] Starting Excel to database conversion...[/]");
+        Logger.Log("[lime] Converting Excel to database...[/]");
         await _dataSeeder.ExtractMatchDatasetToDatabase();
-        Logger.Log("[lime] Excel to database conversion completed.");
+        Logger.Log("[lime] Excel to database conversion completed.[/]");
     }
 
     public Task CreateDatabase()
     {
-        Logger.Log("[lime] Creating new database...");
+        Logger.Log("[lime] Creating new database...[/]");
         _repository.CreateDatabase();
         return Task.CompletedTask;
     }
 
     public Task DeleteDatabase()
     {
-        Logger.Log("[lime] Deleting exsistent database...");
+        Logger.Log("[lime] Deleting existent database...[/]");
         _repository.DeleteDatabase();
         return Task.CompletedTask;
     }
