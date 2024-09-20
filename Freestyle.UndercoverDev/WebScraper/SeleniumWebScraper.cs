@@ -46,43 +46,48 @@ public class SeleniumWebScraper : IWebScraper
             downloadButton?.Click();
             Console.WriteLine("Download button clicked, waiting for file to be downloaded...");
 
-            string fileName = "predictions.xlsx";
-            string[] possiblePaths =
-            [
-                Path.Combine(_downloadFolder, fileName),
-                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads", fileName),
-                Path.Combine(Directory.GetCurrentDirectory(), fileName)
-            ];
-
-            int maxWaitTime = 60; // Increase wait time to 60 seconds
-            int waitInterval = 1000; // Check every second
-            int totalWaitTime = 0;
-
-            while (totalWaitTime < maxWaitTime * 1000)
-            {
-                foreach (var path in possiblePaths)
-                {
-                    if (File.Exists(path))
-                    {
-                        Console.WriteLine($"File found at: {path}");
-                        if (path != Path.Combine(_downloadFolder, fileName))
-                        {
-                            File.Move(path, Path.Combine(_downloadFolder, fileName), true);
-                            Console.WriteLine($"File moved to: {Path.Combine(_downloadFolder, fileName)}");
-                        }
-                        return;
-                    }
-                }
-                await Task.Delay(waitInterval);
-                totalWaitTime += waitInterval;
-            }
-
-            throw new Exception($"File {fileName} not found in any expected location after {maxWaitTime} seconds.");
+            await CheckFileIsDownloaded();
         }
         catch (Exception ex)
         {
             Console.WriteLine($"An error occurred: {ex.Message}");
             Console.WriteLine($"Stack trace: {ex.StackTrace}");
         }
+    }
+
+    public async Task CheckFileIsDownloaded()
+    {
+        string fileName = "predictions.xlsx";
+        string[] possiblePaths =
+        [
+            Path.Combine(_downloadFolder, fileName),
+                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads", fileName),
+                Path.Combine(Directory.GetCurrentDirectory(), fileName)
+        ];
+
+        int maxWaitTime = 60; // Increase wait time to 60 seconds
+        int waitInterval = 1000; // Check every second
+        int totalWaitTime = 0;
+
+        while (totalWaitTime < maxWaitTime * 1000)
+        {
+            foreach (var path in possiblePaths)
+            {
+                if (File.Exists(path))
+                {
+                    Console.WriteLine($"File found at: {path}");
+                    if (path != Path.Combine(_downloadFolder, fileName))
+                    {
+                        File.Move(path, Path.Combine(_downloadFolder, fileName), true);
+                        Console.WriteLine($"File moved to: {Path.Combine(_downloadFolder, fileName)}");
+                    }
+                    return;
+                }
+            }
+            await Task.Delay(waitInterval);
+            totalWaitTime += waitInterval;
+        }
+
+        throw new Exception($"File {fileName} not found in any expected location after {maxWaitTime} seconds.");
     }
 }
