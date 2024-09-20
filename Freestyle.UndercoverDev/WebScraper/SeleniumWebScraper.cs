@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using Utilities;
 
 namespace WebScraper;
 public class SeleniumWebScraper : IWebScraper
@@ -13,7 +14,7 @@ public class SeleniumWebScraper : IWebScraper
         string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory())?.FullName ?? string.Empty;
         _downloadFolder = Path.Combine(projectDirectory, "Resources");
         Directory.CreateDirectory(_downloadFolder); // Ensure the directory exists
-        Console.WriteLine($"Download folder set to: {_downloadFolder}");
+        Logger.Log($"[lime]Download folder set to: {_downloadFolder}[/]");
     }
 
     public async Task DownloadExcelFile()
@@ -44,14 +45,14 @@ public class SeleniumWebScraper : IWebScraper
                 return element.Displayed && element.Enabled ? element : null;
             });
             downloadButton?.Click();
-            Console.WriteLine("Download button clicked, waiting for file to be downloaded...");
+            Logger.Log("[lime]Download button clicked, waiting for file to be downloaded...[/]");
 
             await CheckFileIsDownloaded();
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"An error occurred: {ex.Message}");
-            Console.WriteLine($"Stack trace: {ex.StackTrace}");
+            Logger.Log($"[red]An error occurred: {ex.Message}[/]");
+            Logger.Log($"[red]Stack trace: {ex.StackTrace}[/]");
         }
     }
 
@@ -75,11 +76,11 @@ public class SeleniumWebScraper : IWebScraper
             {
                 if (File.Exists(path))
                 {
-                    Console.WriteLine($"File found at: {path}");
+                    Logger.Log($"[lime]File found at: {path}[/]");
                     if (path != Path.Combine(_downloadFolder, fileName))
                     {
                         File.Move(path, Path.Combine(_downloadFolder, fileName), true);
-                        Console.WriteLine($"File moved to: {Path.Combine(_downloadFolder, fileName)}");
+                        Logger.Log($"[lime]File moved to: {Path.Combine(_downloadFolder, fileName)}[/]");
                     }
                     return;
                 }
