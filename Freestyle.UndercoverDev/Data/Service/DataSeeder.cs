@@ -58,17 +58,17 @@ public class DataSeeder : IDataSeeder
                         League = worksheet.Cells[row, 4].Value?.ToString(),
                         HomeTeam = worksheet.Cells[row, 2].Value?.ToString(),
                         AwayTeam = worksheet.Cells[row, 3].Value?.ToString(),
-                        HomeWin = float.TryParse(worksheet.Cells[row, 6].Value?.ToString(), out float homeWin) ? homeWin : 0,
-                        Draw = float.TryParse(worksheet.Cells[row, 7].Value?.ToString(), out float draw) ? draw : 0,
-                        AwayWin = float.TryParse(worksheet.Cells[row, 8].Value?.ToString(), out float awayWin) ? awayWin : 0,
-                        OverOneGoal = float.TryParse(worksheet.Cells[row, 14].Value?.ToString(), out float overOneGoal) ? overOneGoal : 0,
-                        OverTwoGoals = float.TryParse(worksheet.Cells[row, 18].Value?.ToString(), out float overTwoGoals) ? overTwoGoals : 0,
-                        OverThreeGoals = float.TryParse(worksheet.Cells[row, 22].Value?.ToString(), out float overThreeGoals) ? overThreeGoals : 0,
-                        OverFourGoals = float.TryParse(worksheet.Cells[row, 24].Value?.ToString(), out float overFourGoals) ? overFourGoals : 0,
-                        UnderOneGoal = float.TryParse(worksheet.Cells[row, 30].Value?.ToString(), out float underOneGoal) ? underOneGoal : 0,
-                        UnderTwoGoals = float.TryParse(worksheet.Cells[row, 34].Value?.ToString(), out float underTwoGoals) ? underTwoGoals : 0,
-                        UnderThreeGoals = float.TryParse(worksheet.Cells[row, 38].Value?.ToString(), out float underThreeGoals) ? underThreeGoals : 0,
-                        UnderFourGoals = float.TryParse(worksheet.Cells[row, 40].Value?.ToString(), out float underFourGoals) ? underFourGoals : 0
+                        HomeWin = double.TryParse(worksheet.Cells[row, 6].Value?.ToString(), out double homeWin) ? homeWin : 0,
+                        Draw = double.TryParse(worksheet.Cells[row, 7].Value?.ToString(), out double draw) ? draw : 0,
+                        AwayWin = double.TryParse(worksheet.Cells[row, 8].Value?.ToString(), out double awayWin) ? awayWin : 0,
+                        OverOneGoal = double.TryParse(worksheet.Cells[row, 14].Value?.ToString(), out double overOneGoal) ? overOneGoal : 0,
+                        OverTwoGoals = double.TryParse(worksheet.Cells[row, 18].Value?.ToString(), out double overTwoGoals) ? overTwoGoals : 0,
+                        OverThreeGoals = double.TryParse(worksheet.Cells[row, 22].Value?.ToString(), out double overThreeGoals) ? overThreeGoals : 0,
+                        OverFourGoals = double.TryParse(worksheet.Cells[row, 24].Value?.ToString(), out double overFourGoals) ? overFourGoals : 0,
+                        UnderOneGoal = double.TryParse(worksheet.Cells[row, 30].Value?.ToString(), out double underOneGoal) ? underOneGoal : 0,
+                        UnderTwoGoals = double.TryParse(worksheet.Cells[row, 34].Value?.ToString(), out double underTwoGoals) ? underTwoGoals : 0,
+                        UnderThreeGoals = double.TryParse(worksheet.Cells[row, 38].Value?.ToString(), out double underThreeGoals) ? underThreeGoals : 0,
+                        UnderFourGoals = double.TryParse(worksheet.Cells[row, 40].Value?.ToString(), out double underFourGoals) ? underFourGoals : 0
                     };
 
                     extractedData.Add(matchData);
