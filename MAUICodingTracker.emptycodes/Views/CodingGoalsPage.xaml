@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:CodingTracker.ViewModels"
+             x:Class="CodingTracker.Views.CodingGoalsPage"
+             Title="Coding Goals">
+    
+    <ContentPage.BindingContext>
+        <viewModels:CodingGoalsViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" Spacing="10">
+        <Label Text="How many coding hours do you want to achieve?" FontSize="18"/>
+        <Entry x:Name="GoalHoursEntry"
+               Text="{Binding GoalHours}" 
+               Keyboard="Numeric"
+               Placeholder="Enter hours"
+               HeightRequest="40" />
+
+        <Label Text="What is your target date to complete this goal?" FontSize="18"/>
+        <DatePicker x:Name="GoalDeadlineDatePicker"
+                    Date="{Binding GoalDeadline}"
+                    Format="yyyy-MM-dd"
+                    HeightRequest="40" />
+
+        <Button Text="Set Goal"
+                Command="{Binding SetGoalCommand}" />
+
+        <Label Text="{Binding GoalStatus}" 
+               TextColor="Green" 
+               FontSize="18" 
+               FontAttributes="Bold" 
+               IsVisible="{Binding IsGoalStatusVisible}" />
+    </StackLayout>
+</ContentPage>

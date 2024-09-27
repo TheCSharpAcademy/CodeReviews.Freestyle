@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:CodingTracker.ViewModels"
+             x:Class="CodingTracker.Views.ViewAllSessionsPage"
+             Title="All Sessions"
+             NavigatedTo="ContentPage_NavigatedTo">
+    
+    <ContentPage.BindingContext>
+        <viewModels:ViewAllSessionsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Session" Command="{Binding NewCommand}" IconImageSource="{FontImage Glyph='+', Color=Black, Size=75}" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Padding="10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="Filter By:" FontSize="16" VerticalOptions="Center" Padding="0,0,2,0"/>
+                <Picker x:Name="filterPicker"
+                    SelectedIndexChanged="OnFilterChanged"
+                    WidthRequest="85"
+                    HeightRequest="40">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>All Sessions</x:String>
+                            <x:String>Today</x:String>
+                            <x:String>Last Week</x:String>
+                            <x:String>Last Month</x:String>
+                            <x:String>Last Year</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Text="Sort By:" FontSize="16" Margin="10,0,0,0" VerticalOptions="Center" Padding="0,0,2,0"/>
+                <Picker x:Name="sortPicker"
+                    SelectedIndexChanged="OnSortChanged"
+                    WidthRequest="145"
+                    HeightRequest="40">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Date Ascending</x:String>
+                            <x:String>Date Descending</x:String>
+                            <x:String>Duration Ascending</x:String>
+                            <x:String>Duration Descending</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+
+            <CollectionView x:Name="sessionsCollection"
+                ItemsSource="{Binding AllSessions}"
+                Margin="20"
+                SelectionMode="Single"
+                SelectionChangedCommand="{Binding SelectSessionCommand}"
+                SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Id, StringFormat='Session {0}'}" FontSize="18"/>
+                            <Label Text="{Binding Duration, StringFormat='Duration: {0}'}" FontSize="18"/>
+                            <Label Text="{Binding FormattedStartTime, StringFormat='Started: {0}'}" FontSize="14"/>
+                            <Label Text="{Binding FormattedEndTime, StringFormat='Stopped: {0}'}" FontSize="14"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
