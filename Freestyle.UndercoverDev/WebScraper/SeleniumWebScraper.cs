@@ -89,6 +89,6 @@ public class SeleniumWebScraper : IWebScraper
             totalWaitTime += waitInterval;
         }
 
-        throw new Exception($"File {fileName} not found in any expected location after {maxWaitTime} seconds.");
+        throw new FileNotFoundException($"File {fileName} not found in any expected location after {maxWaitTime} seconds.");
     }
 }

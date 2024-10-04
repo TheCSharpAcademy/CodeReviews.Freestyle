@@ -1,7 +1,4 @@
 ﻿using WebScraper;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
 using Utilities;
 using Data.Controller;
 using Data.Service;
