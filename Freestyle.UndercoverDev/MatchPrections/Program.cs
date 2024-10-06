@@ -4,27 +4,49 @@ using Data.Controller;
 using Data.Service;
 using Data.Repository;
 using Data;
+using Export.Service;
+using Export.Controller;
+using Analysis.Controller;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
+var builder = Host.CreateApplicationBuilder(args);
 
-var scraper = new SeleniumWebScraper();
+ConfigureServices(builder.Services, builder.Configuration);
 
-Logger.Log("[lime]Starting Football Match Predictor...[/]");
+var host = builder.Build();
 
-await scraper.DownloadExcelFile();
-Logger.Log("[lime]Excel file downloaded and processed successfully.[/]");
+await RunProgram(host.Services);
 
-var context = new FootballContext();
-IMatchDataRepository matchDataRepository= new MatchDataRepository(context);
-IDataSeeder dataSeeder = new DataSeeder(matchDataRepository);
-IExcelToDatabaseOperation dataController = new ExcelToDatabaseOperation(dataSeeder, matchDataRepository);
-await dataController.RunOperation();
-// var builder = Host.CreateApplicationBuilder(args);
+void ConfigureServices(IServiceCollection services, ConfigurationManager configuration)
+{
+    services.AddSingleton<IWebScraper, SeleniumWebScraper>();
+    services.AddSingleton<IMatchDataRepository, MatchDataRepository>();
+    services.AddSingleton<IDataSeeder, DataSeeder>();
+    services.AddSingleton<IExcelToDatabaseOperation, ExcelToDatabaseOperation>();
+    services.AddSingleton<IDataAnalyzer, DataAnalyzer>();
+    services.AddSingleton<IExcelExporter, ExcelExporter>();
+    services.AddSingleton<ICsvExporter, CsvExporter>();
+    services.AddSingleton<IExportService, ExportService>();
+    services.AddDbContext<FootballContext>();
+}
 
-// ConfigureServices(builder.Services, builder.Configuration);
+async Task RunProgram(IServiceProvider serviceProvider)
+{
+    var scraper = serviceProvider.GetRequiredService<IWebScraper>();
 
-// var host = builder.Build();
+    Logger.Log("[lime]Starting Football Match Predictor...[/]");
 
-// void ConfigureServices(IServiceCollection services, ConfigurationManager configuration)
-// {
-//     services.AddSingleton<IWebScraper, SeleniumWebScraper>();
-// }
+    await scraper.DownloadExcelFile();
+    Logger.Log("[lime]Excel file downloaded and processed successfully.[/]");
+
+    IExcelToDatabaseOperation dataController = serviceProvider.GetRequiredService<IExcelToDatabaseOperation>();
+    await dataController.RunOperation();
+
+    Logger.Log("[lime]Data analysis and export started...[/]");
+
+    IExportService exportService = serviceProvider.GetRequiredService<IExportService>();
+    exportService.ExportToCsv();
+    Logger.Log("[lime]Data analysis and export completed successfully.[/]");
+}

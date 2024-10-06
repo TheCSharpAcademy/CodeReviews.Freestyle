@@ -35,6 +35,9 @@ public class SeleniumWebScraper : IWebScraper
             //service.SuppressInitialDiagnosticInformation = true;
             service.HideCommandPromptWindow = true;
 
+            // Delete previous file if found
+            DeletePreviousFile();
+
             using var driver = new ChromeDriver(service, chromeOptions, TimeSpan.FromSeconds(120));
             driver.Navigate().GoToUrl(_downloadUrl);
 
@@ -90,5 +93,15 @@ public class SeleniumWebScraper : IWebScraper
         }
 
         throw new FileNotFoundException($"File {fileName} not found in any expected location after {maxWaitTime} seconds.");
+    }
+
+    public void DeletePreviousFile()
+    {
+        string filePath = Path.Combine(_downloadFolder, "predictions.xlsx");
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+            Logger.Log($"[lime]Previous file deleted: {filePath}[/]");
+        }
     }
 }

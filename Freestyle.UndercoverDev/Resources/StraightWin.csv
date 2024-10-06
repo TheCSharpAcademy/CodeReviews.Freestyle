@@ -1,0 +1,36 @@
+Id,Date,League,HomeTeam,AwayTeam,HomeWin,Draw,AwayWin,OverOneGoal,OverTwoGoals,OverThreeGoals,OverFourGoals,UnderOneGoal,UnderTwoGoals,UnderThreeGoals,UnderFourGoals
+1,6.10.2024 15:10,Scotland - Premier League Women,Partick Thistle,Hearts,0.159,0.165,0.677,0,0.59,0.356,0,0,0.41,0.644,0
+15,6.10.2024 15:30,Italy - Serie C Group B,Virtus Entella,Legnago Salus,0.727,0.193,0.079,0,0.489,0,0,0,0.511,0,0
+20,6.10.2024 15:45,UAE - Pro League,Sharjah FC,Al-Urooba,0.872,0.086,0.042,0,0,0.489,0.359,0,0,0.511,0.641
+21,6.10.2024 16:00,Mexico - Liga TDP,Antequera F.C.,Dragones de Oaxaca,0.108,0.179,0.713,0,0.534,0.303,0,0,0.466,0.697,0
+23,6.10.2024 16:00,Spain - Tercera Division,SD Oyonesa,CD Autol,0.693,0.198,0.109,0,0.523,0,0,0,0.477,0,0
+29,6.10.2024 16:00,Russia - First League,FK Sochi,Chayka Peschanokopskoye,0.675,0.214,0.112,0.742,0.493,0.265,0,0.258,0.507,0.735,0
+39,6.10.2024 16:00,Cyprus - 1st Division,Enosis Neon Paralimni,Pafos FC,0.087,0.164,0.749,0.79,0.57,0.341,0,0.21,0.43,0.659,0
+48,6.10.2024 17:00,Mexico - Liga TDP,Club Marina C.R.,FC Juarez II,0.046,0.096,0.858,0,0.691,0.467,0.333,0,0.309,0.533,0.667
+58,6.10.2024 17:00,Serbia - Super Liga,FK IMT Novi Beograd,Red Star Belgrade,0.036,0.089,0.875,0,0.625,0.394,0,0,0.375,0.606,0
+59,6.10.2024 17:00,Guatemala - Primera Division de Ascenso,Mictlan,Deportivo Chiquimulilla,0.67,0.218,0.112,0,0.47,0,0,0,0.53,0,0
+64,6.10.2024 17:00,Ecuador - Serie A,Universidad Catolica del Ecuador,Imbabura,0.725,0.165,0.109,0.823,0.618,0.393,0,0.177,0.382,0.607,0
+86,6.10.2024 18:00,Romania - Liga 1,FCSB,Gloria Buzau,0.732,0.177,0.091,0.785,0.556,0.33,0,0.215,0.444,0.67,0
+89,6.10.2024 19:00,Peru - Reserve League,FBC Melgar,Sport Boys,0.669,0.201,0.13,0,0.585,0.36,0,0,0.415,0.64,0
+91,6.10.2024 19:00,Peru - Reserve League,Alianza Lima,Cienciano del Cuzco,0.783,0.143,0.074,0,0.686,0.471,0.342,0,0.314,0.529,0.658
+93,6.10.2024 19:00,Argentina - Torneo Federal A,Club Villa Mitre,El Linqueno,0.656,0.261,0.083,0.581,0.313,0,0,0.419,0.687,0,0
+99,6.10.2024 19:30,Ecuador - Serie A,LDU Quito,Orense,0.723,0.192,0.085,0.743,0.484,0.268,0,0.257,0.516,0.732,0
+101,6.10.2024 19:30,Portugal - Primeira Liga,Porto,Braga,0.681,0.195,0.124,0.848,0.645,0.422,0,0.152,0.355,0.578,0
+103,6.10.2024 20:00,Mexico - Liga TDP,La Tribu de Ciudad Juarez,Cobras Futbol Premier,0.779,0.141,0.081,0,0.641,0.413,0.274,0,0.359,0.587,0.726
+107,6.10.2024 20:00,Argentina - Torneo Federal A,Olimpo de Bahia Blanca,9 de Julio,0.709,0.221,0.071,0.66,0.382,0,0,0.34,0.618,0,0
+110,6.10.2024 20:00,USA - MLS Next Pro League,Houston Dynamo II,Vancouver Whitecaps II,0.727,0.161,0.112,0,0,0.5,0.381,0,0,0.5,0.619
+118,6.10.2024 20:00,USA - Major League Soccer,New York City,Nashville SC,0.651,0.198,0.151,0.831,0.634,0.414,0,0.169,0.366,0.586,0
+123,6.10.2024 20:45,Mexico - Liga TDP,Fut-Car Cachorros de Leon,Leon GEN,0.707,0.172,0.121,0,0.656,0.431,0.298,0,0.344,0.569,0.702
+136,6.10.2024 21:30,Honduras - Liga de Ascenso,Oro Verde,Atletico San Juaneno,0.656,0.226,0.119,0.694,0.433,0,0,0.306,0.567,0,0
+138,6.10.2024 21:45,Colombia - Primera B,Union Magdalena,Leones FC,0.658,0.22,0.122,0,0.47,0,0,0,0.53,0,0
+140,6.10.2024 22:00,Mexico - Liga TDP,Irritilas FC,San Pedro 7-10 FC,0.905,0.071,0.024,0,0,0.472,0.337,0,0,0.528,0.663
+141,6.10.2024 22:00,Aruba - Divison di Honor,Jong Aruba,SV Racing Club Aruba,0.037,0.078,0.885,0,0,0,0.614,0,0,0,0.386
+145,6.10.2024 22:00,Costa Rica - Primera Division,Deportivo Saprissa,Puntarenas,0.754,0.163,0.083,0.791,0.57,0.35,0,0.209,0.43,0.65,0
+148,6.10.2024 22:30,Costa Rica - Primera Division Women,Sporting FC,Tsunami,0.86,0.092,0.048,0,0,0.548,0.435,0,0,0.452,0.565
+150,6.10.2024 23:00,CONMEBOL - Copa Libertadores Femenina,Boca Juniors,Club Libertad Asuncion,0.688,0.164,0.148,0,0.558,0.326,0,0,0.442,0.674,0
+156,6.10.2024 23:00,USA - Major League Soccer,Portland Timbers,Dallas,0.654,0.189,0.157,0.879,0.701,0.486,0.36,0.121,0.299,0.514,0.64
+157,6.10.2024 23:00,Chile - Primera Division,Colo Colo,Audax Italiano,0.67,0.215,0.116,0.725,0.471,0.256,0,0.275,0.529,0.744,0
+159,7.10.2024 0:00,Mexico - Liga TDP,Campeche Nueva Generacion,HO GAR H. Matamoros,0.142,0.136,0.722,0,0.576,0.341,0,0,0.424,0.659,0
+170,7.10.2024 13:00,Norway - 2nd Division,Viking II,FK Eik Tonsberg 871,0.019,0.052,0.929,0,0,0,0.642,0,0,0,0.358
+175,7.10.2024 17:00,Romania - Liga 2,Csikszereda,CSM Focsani,0.763,0.163,0.074,0,0.545,0.318,0,0,0.455,0.682,0
+181,7.10.2024 18:30,Italy - Serie C Group B,Ternana,Nuovo Campobasso Calcio,0.669,0.217,0.114,0,0.484,0,0,0,0.516,0,0

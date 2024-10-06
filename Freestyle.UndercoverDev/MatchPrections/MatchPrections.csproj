@@ -4,6 +4,8 @@
     <ProjectReference Include="..\WebScraper\WebScraper.csproj" />
     <ProjectReference Include="..\Utilities\Utilities.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Export\Export.csproj" />
+    <ProjectReference Include="..\Analysis\Analysis.csproj" />
   </ItemGroup>
 
   <ItemGroup>
