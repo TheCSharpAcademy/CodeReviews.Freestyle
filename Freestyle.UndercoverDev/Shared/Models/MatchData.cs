@@ -1,4 +1,4 @@
-namespace Data.Models;
+namespace Shared.Models;
 public class MatchData
 {
     public int Id { get; set; }

@@ -10,6 +10,9 @@ using Analysis.Controller;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using Email;
+using Email.Service;
+using Email.Controller;
 
 var builder = Host.CreateApplicationBuilder(args);
 
@@ -29,6 +32,9 @@ void ConfigureServices(IServiceCollection services, ConfigurationManager configu
     services.AddSingleton<IExcelExporter, ExcelExporter>();
     services.AddSingleton<ICsvExporter, CsvExporter>();
     services.AddSingleton<IExportService, ExportService>();
+    services.AddSingleton<IEmailService, EmailService>();
+    services.AddSingleton<IEmailController, EmailController>();
+    services.AddSingleton<ConfigReader>();
     services.AddDbContext<FootballContext>();
 }
 
@@ -49,4 +55,8 @@ async Task RunProgram(IServiceProvider serviceProvider)
     IExportService exportService = serviceProvider.GetRequiredService<IExportService>();
     exportService.ExportToCsv();
     Logger.Log("[lime]Data analysis and export completed successfully.[/]");
+
+    IEmailController emailController = serviceProvider.GetRequiredService<IEmailController>();
+    await emailController.SendEmailAsync();
+    Logger.Log("[lime]Email notification sent successfully.[/]");
 }

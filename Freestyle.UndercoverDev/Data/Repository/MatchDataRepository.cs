@@ -1,4 +1,4 @@
-using Data.Models;
+using Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repository;

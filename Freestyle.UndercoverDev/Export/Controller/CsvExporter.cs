@@ -1,6 +1,6 @@
 using System.Globalization;
 using Analysis.Controller;
-using Data.Models;
+using Shared.Models;
 using CsvHelper;
 
 namespace Export.Controller;

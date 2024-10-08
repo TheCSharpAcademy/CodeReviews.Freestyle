@@ -1,5 +1,3 @@
-using Data.Models;
-
 namespace Export.Controller;
 public interface ICsvExporter
 {

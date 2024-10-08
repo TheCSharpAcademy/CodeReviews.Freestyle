@@ -1,4 +1,4 @@
-using Data.Models;
+using Shared.Models;
 using Data.Repository;
 
 namespace Analysis.Controller;
@@ -20,7 +20,7 @@ public class DataAnalyzer : IDataAnalyzer
     {
         return _repository.GetMatchData().Result.Where(x => x.Draw > 0.35 && x.HomeWin < 0.37 && x.AwayWin < 0.37 && x.UnderTwoGoals > 0.65 && x.UnderThreeGoals > 0.75);
     }
- 
+
     public IEnumerable<MatchData> OverThreeGoals()
     {
         return _repository.GetMatchData().Result.Where(x => x.OverThreeGoals > 0.65);

@@ -1,4 +1,4 @@
-using Data.Models;
+using Shared.Models;
 using Data.Repository;
 using OfficeOpenXml;
 using Utilities;
@@ -6,12 +6,15 @@ using Utilities;
 namespace Data.Service;
 public class DataSeeder : IDataSeeder
 {
-    const string filePath = "/home/nelson/Desktop/C#/AcadamyC#/Freestyle/Freestyle.UndercoverDev/Resources/predictions.xlsx";
+    private readonly string _filePath;
     private readonly IMatchDataRepository _matchDataRepository;
 
     public DataSeeder(IMatchDataRepository matchDataRepository)
     {
         _matchDataRepository = matchDataRepository;
+
+        string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory())?.FullName ?? string.Empty;
+        _filePath = Path.Combine(projectDirectory, "Resources/predictions.xlsx");
     }
 
     public async Task ExtractMatchDatasetToDatabase()
@@ -21,22 +24,22 @@ public class DataSeeder : IDataSeeder
         try
         {
             // If filePath is not found
-            if (!File.Exists(filePath))
+            if (!File.Exists(_filePath))
             {
-                Logger.Log("[bold][red]Excel file not found at path: " + filePath + "[/][/]");
+                Logger.Log("[bold][red]Excel file not found at path: " + _filePath + "[/][/]");
                 return;
             }
 
             
             // If the Excel file is empty, return
-            if (new FileInfo(filePath).Length == 0)
+            if (new FileInfo(_filePath).Length == 0)
             {
                 Logger.Log("[bold][yellow]Excel file is empty.[/][/]");
                 return;
             }
 
             // Read data from the downloaded Excel file and extract relevant information
-            using var package = new ExcelPackage(new FileInfo(filePath));
+            using var package = new ExcelPackage(new FileInfo(_filePath));
 
             if (package.Workbook.Worksheets.Count > 0)
             {
