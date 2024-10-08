@@ -1,0 +1,24 @@
+Id,Date,League,HomeTeam,AwayTeam,HomeWin,Draw,AwayWin,OverOneGoal,OverTwoGoals,OverThreeGoals,OverFourGoals,UnderOneGoal,UnderTwoGoals,UnderThreeGoals,UnderFourGoals
+3,8.10.2024 12:00,England - Professional Development League U21,Queens Park Rangers,Bristol City,0.127,0.151,0.722,0,0,0.581,0.475,0,0,0.419,0.525
+5,8.10.2024 12:30,Argentina - Reserve League,Club Sportivo Barracas,Atlas,0.915,0.057,0.027,0,0,0.651,0.559,0,0,0.349,0.441
+15,8.10.2024 13:00,Slovakia - Cup,TJ Banik Kalinovo,FK Pohronie,0.093,0.148,0.759,0,0,0.518,0.393,0,0,0.482,0.607
+27,8.10.2024 15:00,Argentina - Reserve League,CA Excursionistas,Acassuso,0.782,0.124,0.094,0,0,0.597,0.492,0,0,0.403,0.508
+33,8.10.2024 17:00,Argentina - Reserve League,Colegiales,CSD Liniers,0.66,0.219,0.121,0.712,0.462,0,0,0.288,0.538,0,0
+35,8.10.2024 17:00,Norway - 3rd Division Group 3,Mjondalen IF II,Ullern FC,0.118,0.158,0.723,0,0,0.587,0.484,0,0,0.413,0.516
+36,8.10.2024 17:30,Israel - Liga Bet,Ironi Kiryat Gat,Maccabi Ramla,0.822,0.116,0.062,0,0,0.517,0.399,0,0,0.483,0.601
+39,8.10.2024 18:00,Colombia - Regional League,Rionegro Aguilas,Politecnico J.I.C,0.688,0.183,0.129,0,0.626,0.402,0,0,0.374,0.598,0
+43,8.10.2024 18:00,England - EFL Trophy,Rotherham,Newcastle United U21,0.69,0.182,0.128,0,0.627,0.397,0,0,0.373,0.603,0
+47,8.10.2024 18:00,Belgium - Super League Women,Anderlecht,Club Brugge,0.863,0.083,0.054,0,0,0.509,0.387,0,0,0.491,0.613
+61,8.10.2024 18:30,England - EFL Trophy,Wrexham,Wolverhampton Wanderers U21,0.864,0.092,0.045,0,0,0.545,0.423,0,0,0.455,0.577
+64,8.10.2024 18:45,Ireland - Leinster Senior Cup,St. Patrick's Athletic,St. Mochtas,0.754,0.137,0.109,0,0,0.585,0.479,0,0,0.415,0.521
+81,8.10.2024 18:45,England - FA Cup,Lowestoft Town,Haringey Borough,0.692,0.199,0.11,0,0.594,0.373,0,0,0.406,0.627,0
+82,8.10.2024 18:45,England - FA Cup,Chesham United,Bishops Cleeve,0.822,0.121,0.057,0,0.653,0.425,0.288,0,0.347,0.575,0.712
+83,8.10.2024 18:45,England - EFL Trophy,Bolton Wanderers,Aston Villa U21,0.682,0.178,0.14,0,0,0.515,0.392,0,0,0.485,0.608
+85,8.10.2024 18:45,Northern Ireland - County Antrim Shield,Glentoran,Carrick Rangers,0.668,0.167,0.165,0,0.613,0.382,0,0,0.387,0.618,0
+94,8.10.2024 18:45,England - Northern Premier League,Worksop,Prescot Cables FC,0.75,0.145,0.106,0,0.651,0.418,0.285,0,0.349,0.582,0.715
+98,8.10.2024 19:00,UEFA - Champions League Women,Chelsea,Real Madrid,0.691,0.185,0.124,0,0.669,0.439,0.303,0,0.331,0.561,0.697
+104,8.10.2024 23:00,Paraguay - Cup,Olimpia Asuncion,3 de Febrero,0.795,0.15,0.055,0,0.508,0,0,0,0.492,0,0
+111,9.10.2024 12:00,Greece - Cup,Kavala,Asteras Tripolis,0.114,0.196,0.69,0,0.515,0,0,0,0.485,0,0
+113,9.10.2024 16:45,UEFA - Champions League Women,Hammarby,SKN St Polten,0.754,0.137,0.108,0,0.59,0.355,0,0,0.41,0.645,0
+119,9.10.2024 18:45,Wales - Premier League,The New Saints,Caernarfon Town,0.885,0.076,0.039,0,0,0.604,0.502,0,0,0.396,0.498
+138,10.10.2024 9:10,FIFA - World Cup Qualifiers Asia,Australia,China,0.856,0.119,0.025,0.798,0.58,0.354,0,0.202,0.42,0.646,0
